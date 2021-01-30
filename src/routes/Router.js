@@ -7,6 +7,8 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { LoginScreen } from '../screens/LoginScreen';
 import { OrderScreen } from '../screens/OrderScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
+import { ProfileEditScreen } from '../screens/ProfileEditScreen';
+import { ProfileEditAdressScreen } from '../screens/ProfileEditAdressScreen';
 import { RestaurantsScreen } from '../screens/RestaurantsScreen';
 import { SearchScreen } from '../screens/SearchScreen';
 import { SignUpScreen } from '../screens/SignUpScreen';
@@ -30,6 +32,12 @@ export const Router = () => {
         </Route>
         <Route exact path='/perfil'>
           <ProfileScreen />
+        </Route>
+        <Route exact path='/perfil/editar'>
+          <ProfileEditScreen />
+        </Route>
+        <Route exact path='/perfil/editar/endereco'>
+          <ProfileEditAdressScreen />
         </Route>
         <Route exact path='/pedido'>
           <OrderScreen />
