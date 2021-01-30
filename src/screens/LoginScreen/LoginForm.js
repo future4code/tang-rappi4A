@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from "@material-ui/core/TextField";
 import {Button} from "@material-ui/core";
 import useForm from '../../hooks/useForm';
-import {ButtonContainer, InputsContainer} from " ./styled"
+//import {ButtonContainer, InputsContainer} from " ./styled"
 
 export const LoginForm = () => {
   const [form, handLeInput] = useForm({email: "", password:""})
@@ -14,7 +14,7 @@ export const LoginForm = () => {
 
   return (
      
-    <InputsContainer>
+    <div>
     <form id= {"login_form"}onSubmit={submitForm}>
       <TextField
       value={form.email}
@@ -44,7 +44,7 @@ export const LoginForm = () => {
 
     />
     
-    <ButtonContainer>
+    <div>
       <Button
         type={"submit"}
         variant={"contained"}
@@ -56,9 +56,9 @@ export const LoginForm = () => {
       
          </Button>
 
-        </ButtonContainer>
+        </div>
       </form>
-    </InputsContainer>
+    </div>
   
   )
 }
