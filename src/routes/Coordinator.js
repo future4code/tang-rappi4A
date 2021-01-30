@@ -5,3 +5,7 @@ export const goToLoginScreen = (history) => {
 export const goToHomeScreen = (history) => {
   history.push('/')
 }
+
+export const goToSignUpScreen = (history) => {
+  history.push('/cadastro')
+}
