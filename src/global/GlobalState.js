@@ -6,7 +6,8 @@ import { BASE_URL } from "../constants/urls";
 const GlobalState = (props) => {
 
     const [restaurantes, setRestaurantes] = useState([]);
-
+    const [categoryFilter, setCategoryFilter] = useState([])
+    
 
     const getRestaurantes = () => {
         const request = axios.get('https://us-central1-missao-newton.cloudfunctions.net/rappi4A/restaurants', {
@@ -17,12 +18,17 @@ const GlobalState = (props) => {
         })
 
         request.then((response) => setRestaurantes(response.data))
+        
     }
 
-    const states = {restaurantes}
-    const requests = {getRestaurantes};
+  
+  
 
-  const data = {states, requests};
+    const states = {restaurantes, categoryFilter};
+    const requests = {getRestaurantes};
+    const setters = {setCategoryFilter}
+
+  const data = {states, requests, setters};
 
   return (
     <GlobalStateContext.Provider value={data}>
