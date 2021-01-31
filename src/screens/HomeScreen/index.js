@@ -12,37 +12,11 @@ export const HomeScreen = () => {
  
 
   useEffect(() => {
-    requests.getRestaurantes();
-    setters.setRestaurantesRender(false);
-    
+    requests.getRestaurantes(); 
   }, [])
   
 
-  useEffect(() => {
-  let list = states.restaurantes.restaurants;
   
-  if (search != '') {
-
-    const novaLista = list.filter((r) => {
-      if(r.name == search) {
-        return true
-        } else {
-          return false
-        }
-
-      
-    });
-
-    const novaListaFinal = (novaLista ? novaLista : []) 
-    setters.setRestaurantesRender(novaListaFinal); 
-   
-  } else {
-    setters.setRestaurantesRender(list)
-  }
-
-  }, [search])
-
-
   const handleSearch = (event) => {
     setSearch(event.target.value)
   }
@@ -52,7 +26,7 @@ export const HomeScreen = () => {
 
     <input type="text" value={search} onChange={(event) => {handleSearch(event)} } placeholder="Restaurante" />
     
-    {states.restaurantes.restaurants ? <ResCard rests={states.restaurantesRender ? states.restaurantesRender.restaurants : states.restaurantes.restaurants}/> : <h2>Loading...</h2>}
+    {states.restaurantes.restaurants ? <ResCard rests={states.restaurantes.restaurants} search={search} /> : <h2>Loading...</h2>}
     
   
   

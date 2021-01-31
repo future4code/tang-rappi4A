@@ -5,12 +5,18 @@ import ResCardStyles from './ResCardStyles.css'
 
 
 export const ResCard = (props) => {
-    const {rests} = props;
+    const {rests, search} = props;
+
+    let filteredList = rests.filter(
+        (r) => {
+            return r.name.indexOf(search) !== -1;
+        }
+    )
 
   return (
   <div>
 
-      {rests && rests.map((r, index) => {
+      {rests && filteredList.map((r, index) => {
         
         
         return (
