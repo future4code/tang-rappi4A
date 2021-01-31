@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import GlobalStateContext from '../../global/GlobalStateContext';
+import Logoimg from "../../assets/Rappi4-logo-fundo-branco.svg"
+import {HomeContainer, Logo} from './styled';
 import ResCard from './ResCard';
 import Main from './main.css';
 
@@ -21,7 +23,9 @@ export const HomeScreen = () => {
   }
 
   return (
-  <div className="main">
+  <HomeContainer>
+
+    <Logo><img src={Logoimg} /></Logo>
 
     <input type="text" value={search} onChange={(event) => {handleSearch(event)} } placeholder="Restaurante"  className="searchbar" />
     
@@ -29,7 +33,7 @@ export const HomeScreen = () => {
     
   
   
-  </div>
+  </HomeContainer>
 
   )
 }

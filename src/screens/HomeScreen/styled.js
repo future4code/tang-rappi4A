@@ -3,9 +3,10 @@ import { red } from '@material-ui/core/colors';
 import styled from 'styled-components';
 
 export const HomeContainer = styled.div`
-width: 360px;
-height: 640px;
-padding: 288px 117px 287px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
 background-color: #e86e5a;
 text-align: center;
 
