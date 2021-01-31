@@ -6,8 +6,7 @@ import { BASE_URL } from "../constants/urls";
 const GlobalState = (props) => {
 
     const [restaurantes, setRestaurantes] = useState([]);
-    const [restaurantesRender, setRestaurantesRender] = useState([]);
-
+    
 
     const getRestaurantes = () => {
         const request = axios.get('https://us-central1-missao-newton.cloudfunctions.net/rappi4A/restaurants', {
@@ -21,21 +20,12 @@ const GlobalState = (props) => {
         
     }
 
-    const getRestaurantesRender = () => {
-      const request = axios.get('https://us-central1-missao-newton.cloudfunctions.net/rappi4A/restaurants', {
+  
+  
 
-          headers: {
-              "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IldScHBFeExMdXI4SWU1WTVLMkVoIiwibmFtZSI6IlRpYWdvIFNlc3RhcmkiLCJlbWFpbCI6InRpYWdvc2VzdGFyaUBnbWFpbC5jb20iLCJjcGYiOiIyMjIuMjIyLjQ0NC0wOSIsImhhc0FkZHJlc3MiOnRydWUsImFkZHJlc3MiOiJSLiBBZm9uc28gQnJheiwgMTc3LCA3MiAtIFZpbGEgTi4gQ29uY2Vpw6fDo28iLCJpYXQiOjE2MTIwMzgyNTJ9.lCXhVaCaDpHtB5D9zEZ34vBpAqCLgBP6wGj0nLs_STU"
-          }
-      })
-
-      request.then((response) => setRestaurantesRender(response.data))
-      
-  }
-
-    const states = {restaurantes, restaurantesRender};
-    const requests = {getRestaurantes, getRestaurantesRender};
-    const setters = {setRestaurantesRender}
+    const states = {restaurantes};
+    const requests = {getRestaurantes};
+    const setters = {}
 
   const data = {states, requests, setters};
 

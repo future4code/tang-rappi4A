@@ -13,10 +13,14 @@ export const ResCard = (props) => {
         }
     )
 
+   useEffect (() => {
+       console.log(filteredList);
+   }, [search])
+
   return (
   <div>
 
-      {rests && filteredList.map((r, index) => {
+      {filteredList.length !== 0 ? filteredList.map((r, index) => {
         
         
         return (
@@ -34,7 +38,7 @@ export const ResCard = (props) => {
         
         
       }
-      )}
+      ) : <h4>Não encontramos um restaurante com esse nome</h4> }
     
   
   
