@@ -7,14 +7,23 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
-background-color: #e86e5a;
+
 text-align: center;
+height: 100%;
 
 `
 export const Logo = styled.div`
-width: 126px;
+width: 100%;
 height: 65px;
 object-fit: contain;
+background-color: #e86e5a;
 
 
-` 
+`
+
+export const CFilters = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+width: 100%;
+`

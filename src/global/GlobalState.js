@@ -6,6 +6,7 @@ import { BASE_URL } from "../constants/urls";
 const GlobalState = (props) => {
 
     const [restaurantes, setRestaurantes] = useState([]);
+    const [categoryFilter, setCategoryFilter] = useState([])
     
 
     const getRestaurantes = () => {
@@ -23,9 +24,9 @@ const GlobalState = (props) => {
   
   
 
-    const states = {restaurantes};
+    const states = {restaurantes, categoryFilter};
     const requests = {getRestaurantes};
-    const setters = {}
+    const setters = {setCategoryFilter}
 
   const data = {states, requests, setters};
 

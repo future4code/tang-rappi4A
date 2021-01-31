@@ -1,21 +1,26 @@
 import React, { useContext, useEffect } from 'react';
 import ResCardStyles from './ResCardStyles.css'
+import GlobalStateContext from '../../global/GlobalStateContext';
 
 
 
 
 export const ResCard = (props) => {
-    const {rests, search} = props;
+    const {rests, search, cat} = props;
+    const {states, setters} = useContext(GlobalStateContext);
 
     let filteredList = rests.filter(
         (r) => {
-            return r.name.indexOf(search) !== -1;
+            if (cat.length > 0) {
+                return (r.name.indexOf(search) !== -1 && cat.indexOf(r.category) !== -1);
+            } else {
+                return (r.name.indexOf(search) !== -1 );
+                
+            }
         }
     )
 
-   useEffect (() => {
-       console.log(filteredList);
-   }, [search])
+   
 
   return (
   <div>
@@ -27,7 +32,7 @@ export const ResCard = (props) => {
             <div key={index} className="ResCard">
                 <img src={r.logoUrl} />
                 <div className="ResCardDetails">                
-                    <div>{r.name}</div>
+                    <div className='resname'>{r.name}</div>
                     <div>
                         <div>{String(Number(r.deliveryTime) - 10) + " - " + r.deliveryTime + ' min'}</div>
                         <div>{"Frete: R$" + r.shipping.toFixed(2)}</div>
