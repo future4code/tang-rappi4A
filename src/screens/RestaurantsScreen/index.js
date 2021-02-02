@@ -1,23 +1,51 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {Botão, ContainerImagem, Containers, FontPrincipal, InformaçõesProduto, Paragrafos, ParagrafoSpan, Titulo, Titulos2} from "../RestaurantsScreen/styled"
 import Cards from "./Cards"
 import useRequestData from '../../hooks/useRequestData';
 import {BASE_URL}from "../../constants/urls"
-import {useParams} from "react-router-dom"
+import {useParams, useHistory} from "react-router-dom"
+import axios from "axios"
+import GlobalStateContext from "../../global/GlobalStateContext"
 
 export const RestaurantsScreen = () => {
-  // const {state, setState} = useContext(GlobalStateContext)
-  const params = useParams()
 
-  const restaurantDetail = useRequestData(`${BASE_URL}/restaurants/${params.id}`, {});
-  console.log(restaurantDetail)
+  
+  
+  const [restaurants, setRestaurants] = useState([])
+  const {states, setters, requests} = useContext(GlobalStateContext)
+    
+    const history = useHistory();
+    const params = useParams()
 
-  useEffect(() => {
-    console.log(restaurantDetail)
-  }, [restaurantDetail])
+    useEffect(() => {
+       requests.getRestaurantes(``$());
+       
+    },[]);
 
+    console.log(states)
 
+    // const data = useRequestData({}, `${BASE_URL}/restaurants/${params.id}`)
+    
+    // useEffect(() => {
+    //   axios.get(`${BASE_URL}/restaurants/${params.id}`,{headers: {"auth": getRestaurants()}})
+    //   .then((response) => {
+    //     console.log(response.data.restaurant.product)
+    //       setRestaurants(response.data.restaurant.product)
+    //   }).catch((error) => {
+    //       console.log(error.message)
+    //   })
+    //   }, [params.id])
 
+    //   useEffect(() => {
+    //     if (states.restaurante && states.restaurante.products) {
+    //         let arrayMap = states.restaurante.products.map((item) => {
+    //             return item.category
+    //         })
+    //         const uniqueSet = new Set(arrayMap)
+    //         arrayMap = [...uniqueSet]
+    //         setCategorias(arrayMap)
+    //     }
+    // }, [states.restaurante])
 
   return (
       <div>
