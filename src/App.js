@@ -8,9 +8,11 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
+
       <GlobalState>
         <Router />
       </GlobalState>
+
       </ThemeProvider>
     </div>
   );

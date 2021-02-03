@@ -19,12 +19,12 @@ const GlobalState = (props) => {
         request.then((response) => setRestaurantes(response.data))
         
     }
-  
-  const states = {restaurantes, categoryFilter};
-  const requests = {getRestaurantes};
-  const setters = {setCategoryFilter}
+ 
 
-  
+    const states = {restaurantes, categoryFilter};
+    const requests = {getRestaurantes};
+    const setters = {setCategoryFilter}
+
   const data = {states, requests, setters};
 
   return (
