@@ -18,12 +18,12 @@ export const RestaurantsScreen = () => {
     const params = useParams()
 
     useEffect(() => {
-       requests.getRestaurantes(``$());
+       requests.getRestaurantes();
        
     },[]);
 
     console.log(states)
-
+    console.log(restaurants)
     // const data = useRequestData({}, `${BASE_URL}/restaurants/${params.id}`)
     
     // useEffect(() => {

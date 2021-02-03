@@ -7,9 +7,6 @@ const GlobalState = (props) => {
 
     const [restaurantes, setRestaurantes] = useState([]);
     const [categoryFilter, setCategoryFilter] = useState([])
-    
-
-   
 
     const getRestaurantes = () => {
         const request = axios.get('https://us-central1-missao-newton.cloudfunctions.net/rappi4A/restaurants', {
@@ -27,7 +24,7 @@ const GlobalState = (props) => {
   const requests = {getRestaurantes};
   const setters = {setCategoryFilter}
 
-  console.log(restaurantes)
+  
   const data = {states, requests, setters};
 
   return (
