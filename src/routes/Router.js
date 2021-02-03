@@ -27,7 +27,7 @@ export const Router = () => {
         <Route exact path='/busca'>
           <SearchScreen />
         </Route>
-        <Route exact path='/restaurantes'>
+        <Route exact path='/restaurantes/:id'>
           <RestaurantsScreen />
         </Route>
         <Route exact path='/perfil'>
