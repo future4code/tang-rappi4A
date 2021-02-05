@@ -18,7 +18,7 @@ export const HomeScreen = () => {
     requests.getRestaurantes(); 
   }, [])
   
-  
+  console.log(states)
   
   const handleSearch = (event) => {
     setSearch(event.target.value)
