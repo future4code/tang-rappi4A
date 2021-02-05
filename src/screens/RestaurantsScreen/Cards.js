@@ -1,21 +1,21 @@
-import React from "react"
-import {Botão, ContainerImagem, Containers, FontPrincipal, InformaçõesProduto, Paragrafos, ParagrafoSpan, Titulo, Titulos2} from "../RestaurantsScreen/styled"
+import React, {useEffect}from "react"
+import {Botão, ContainerImagem, ContainerPage, Containers, FontPrincipal, Imagem, InformaçõesProduto, Paragrafos, ParagrafoSpan, Titulo, Titulos2} from "../RestaurantsScreen/styled"
 
-  const Cards = () => {
+  const Cards = (props) => {
       return(
         <div>
           <Titulo>
-            <strong>Restaurante</strong>
+            <strong>{props.name}</strong>
           </Titulo>
           <ContainerImagem>
-            <img src={"https://picsum.photos/328/120"}/>
+            <Imagem src={props.logoUrl}/>
           </ContainerImagem>
           <div>
-            <FontPrincipal>Nome do Restaurante</FontPrincipal>
-            <Paragrafos>Burger</Paragrafos>
-            <Paragrafos>50-60min</Paragrafos>
-            <Paragrafos>Frete</Paragrafos>
-            <Paragrafos>Rua Fradique Coutinho, 1136 - Vila Madalena</Paragrafos>
+            <FontPrincipal>{props.name}</FontPrincipal>
+            <Paragrafos>{props.category}</Paragrafos>
+            <Paragrafos>{props.deliveryTime} min</Paragrafos>
+            <Paragrafos>Frete: R${props.shipping}</Paragrafos>
+            <Paragrafos>{props.address}</Paragrafos>
           </div>
       </div>
       )
