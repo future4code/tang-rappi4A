@@ -1,30 +1,41 @@
 import styled from 'styled-components'
 
+
+export const ContainerPage = styled.div`
+  max-width: 100vw;
+`
+
 export const Titulo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
   padding: 10px;
 `
 export const ContainerImagem = styled.div`
   display: flex;
-  width: 328px;
-  height: 120px;
-  margin: 17px 16px 12px;
   border: 1px solid black;
   border-radius: 8px;
   background-color: #d8d8d8;
-  
+  margin: 10px; 
 `
 export const Containers = styled.div`
   display: grid;
-  grid-template-columns: 97px 231px;
-  width: 328px;
-  height: 120px;
+  grid-template-columns: 1fr 2fr; 
+  /* width: 328px; 
+  height: 120px; */
   border: 1px solid black;
-  border-radius: 8px;
-  margin: 17px 16px 12px;
+  border-radius: 82x;
+  /* margin: 17px 16px 12px; */
+  margin: 10px;
+`
+
+export const Imagem = styled.img`
+  width: 100%;
+  height: 100%;
+`
+export const Imagem2 = styled.img`
+  width: 100%;
+  height: 100%;
 `
 export const InformaçõesProduto = styled.div`
   display: flex;
@@ -42,8 +53,8 @@ export const Paragrafos = styled.p`
 `
 export const ParagrafoSpan = styled.span`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin:
+  grid-template-columns: 1fr 2fr;
+  /* margin: */
 `
 export const Botão = styled.button`
   width: 90px;
