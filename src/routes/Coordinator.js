@@ -14,3 +14,10 @@ export const goToSignUpScreen = (history) => {
   history.push('/cadastro')
 }
 
+export const goToCart = (history) => {
+  history.push('/cart')
+}
+
+export const goToBoxAmount = (history) => {
+  history.push('/restaurantes/${id}')
+}

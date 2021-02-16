@@ -24,6 +24,8 @@ export const CartScreen = () => {
   }, [])
   console.log(states)
 
+  
+
   return (
   <CartPage>
     <Cart>
