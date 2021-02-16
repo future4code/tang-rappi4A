@@ -11,8 +11,8 @@ export const HomeScreen = () => {
   const {states, requests, setters} = useContext(GlobalStateContext);
   const [search, setSearch] = useState('');
   
+
   
- 
 
   useEffect(() => {
     requests.getRestaurantes(); 

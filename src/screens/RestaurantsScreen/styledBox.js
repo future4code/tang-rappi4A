@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+
 export const boxCart = styled.div`
   
   width: 200px;
@@ -12,9 +13,6 @@ export const boxCart = styled.div`
   background-color: white;
   display: flex;
   align-items: center;
-  display: ${active ? 'flex' : 'none'};
   flex-direction: column
 `
-
-
-  
+ 
